@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 
 class Comment extends Component {
@@ -15,12 +16,15 @@ class Comment extends Component {
         console.log("Comment: ", this.state)
         return (
             <div>
-               <p>username: {this.state.username}</p> 
-                <p>comment: {this.state.text}</p>
-                <input type="text" value="comment"/>
+               <p>username: {this.state.username} {this.state.text}</p> 
             </div>
         )
     }
+}
+
+Comment.propTypes = {
+    username: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired
 }
 
 
