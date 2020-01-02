@@ -1,28 +1,13 @@
-import React from 'react';
+import React from "react";
+import CommentSection from '../CommentSection/CommentSection';
+import './PostContainer.css';
 
-const PostContainer = props =>{
-    return(
-       <div>
-           {props.data.map(d =>{
-              return <div key={d.id}>
-                  <img src={d.thumbnailUrl} alt="thumbnail pic"/>
-                  <p>{d.username}</p>
-                  <img src={d.imageUrl} alt="main picture" />
-                  <div>
-                      <p>{d.likes} likes</p>
-                  </div>
-                   {props.comment.map(commen =>{
-                       <div key={commen.id}>
-                       <p>{commen.username}</p>
-                       <p>{commen.text}</p>
-                       </div>
-                   })}
-                  <div>
-
-                  </div>
-               </div>
-           })}
-       </div>
+const PostContainer = props => {
+    // console.log(props.data.comments)
+    return (
+        <div className='post-style'> PostContainer
+            <CommentSection comments={props.data.comments}/>
+        </div>
     )
 }
 
